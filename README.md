@@ -4,3 +4,4 @@ The user can order a photo session or a video session online. For example: perso
 It is possible to view the photos of photographers.
 All the necessary details can be managed from admin panel.
 
+https://drive.google.com/file/d/1gvIHNpa94IhilsbEoM52I1SMSCpFkrkY/view?usp=sharing
