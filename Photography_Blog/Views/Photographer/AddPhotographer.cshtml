@@ -1,0 +1,78 @@
+﻿@model Photography_Blog.ViewModels.PhotographerViewModel
+
+@{
+    ViewData["Title"] = "AddPhotographer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>ფოტოგრაფის დამატება</h1>
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-action="AddPhotographer" method="post" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label">სახელი</label>
+                                    <input asp-for="FirstName" class="form-control" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LastName" class="control-label">გვარი</label>
+                                    <input asp-for="LastName" class="form-control" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="NickName" class="control-label">ზედმეტი სახელი</label>
+                                    <input asp-for="NickName" class="form-control" />
+                                    <span asp-validation-for="NickName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Age" class="control-label">ასაკი</label>
+                                    <input asp-for="Age" class="form-control" />
+                                    <span asp-validation-for="Age" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DateOfBirth" class="control-label">დაბადების თარიღი</label>
+                                    <input asp-for="DateOfBirth" class="form-control" />
+                                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Experience" class="control-label">გამოცდილება</label>
+                                    <textarea id="Experience" class="form-control" name="Experience" rows="5"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ShortBio" class="control-label">ბიოგრაფია</label>
+                                    <textarea id="ShortBio" class="form-control" name="ShortBio" rows="5"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ImageName" class="control-label">ფოტოგრაფის პირადი სურათი 200x200</label>
+                                    <input class="form-control" type="file" name="PersonalImage" placeholder="Rounded Input" />
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PageImageName" class="control-label">ფოტოგრაფის გვერდის სურათი 1920x1080</label>
+                                    <input class="form-control" type="file" name="PageImage" placeholder="Rounded Input" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="დამატება" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="javascript:history.back()">უკან დაბრუნება</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

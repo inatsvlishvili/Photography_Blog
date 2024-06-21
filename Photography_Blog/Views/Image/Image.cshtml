@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Photography_Blog.ViewModels.PhotoViewModel>
+
+@{
+    ViewData["Title"] = "Image";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <h1>ყველა სურათი</h1>
+            <a asp-action="AddImage" class="btn btn-warning">ახლის შექმნა</a>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    სახელი
+                                </th>
+                                <th>
+                                    სურათის ლინკი
+                                </th>
+                                <th>
+                                    სურათი
+                                </th>
+                                <th>
+                                    აღწერა
+                                </th>
+                                <th>
+                                    კატეგორია
+                                </th>
+                                <th>
+                                    ფოტოგრაფი
+                                </th>
+                                <th>
+                                    თარიღი
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhotoUrl)
+                                    </td>
+                                    <td>
+                                        <img src="~/images/Photo/@item.PhotoCategoryName/@item.ImageName" class="rounded-Corners" style="width: 100px; height: 100px;" asp-append-version="true" />
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Description)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhotoCategoryNameGEO)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PhotographerName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedateTime)
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditImage" asp-route-id="@item.Id" class="btn btn-success">შესწორება</a>
+                                        <a asp-action="DeleteImage" asp-route-id="@item.Id" class="btn btn-danger">წაშლა</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+

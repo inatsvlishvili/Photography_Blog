@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Photography_Blog.ViewModels.PhotographerViewModel>
+
+
+@{
+    ViewData["Title"] = "Photographer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <h1>ფოტოგრაფები</h1>
+            <a asp-action="AddPhotographer" class="btn btn-warning">ახლის შექმნა</a>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    სახელი
+                                </th>
+                                <th>
+                                    გვარი
+                                </th>
+                                <th>
+                                    ნიკი
+                                </th>
+                                <th>
+                                    ასაკი
+                                </th>
+                                <th>
+                                    დაბადების თარიღი
+                                </th>
+                                <th>
+                                    გამოცდილება
+                                </th>
+                                <th>
+                                    ბიოგრაფია
+                                </th>
+                                <th>
+                                    პირადი სურათი
+                                </th>
+                                <th>
+                                    გვარდის სურათი
+                                </th>
+                                <th>
+                                    დამატების თარიღი
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FirstName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NickName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Age)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DateOfBirth)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Experience)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShortBio)
+                                    </td>
+                                    <td>
+                                        <img src="~/Images/Photographer/@item.ImageName" class="rounded-circle" style="width: 100px; height: 100px;" asp-append-version="true" />
+                                    </td>
+                                    <td>
+                                        <img src="~/Images/Photographer/@item.PageImageName" class="rounded-Corners" style="width: 150px; height: 150px;" asp-append-version="true" />
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CreatedateTime)
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditPhotographer" asp-route-id="@item.Id" class="btn btn-success">შესწორება</a>
+                                        <a asp-action="DeletePhotographer" asp-route-id="@item.Id" class="btn btn-danger">წაშლა</a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

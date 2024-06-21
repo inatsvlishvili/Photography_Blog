@@ -1,0 +1,105 @@
+﻿@model IEnumerable<Photography_Blog.ViewModels.ContactInfoViewModel>
+
+@{
+    ViewData["Title"] = "ContactInfo";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <h1>საკონტაქტო ინფორმაცია</h1>
+            <a asp-action="AddContactInfo" class="btn btn-warning">ახლის შექმნა</a>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    სახელი
+                                </th>
+                                <th>
+                                    მისამართი
+                                </th>
+                                <th>
+                                    ტელეფონი
+                                </th>
+                                <th>
+                                    მეილი
+                                </th>
+                                <th>
+                                    რუკა
+                                </th>
+                                <th>
+                                    ფეისბუქი
+                                </th>
+                                <th>
+                                   ინსტაგრამი
+                                </th>
+                                <th>
+                                   ტიკტოკი
+                                </th>
+                                <th>
+                                    იუთუბი
+                                </th>
+                                <th>
+                                    ტვიტერი
+                                </th>
+                                <th>
+                                   ლინკედინი
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Address)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Phone)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Email)
+                                    </td>
+                                    <td>
+                                        @(item.Map != null && item.Map.Length > 20 ? item.Map.Substring(0, 20) + "..." : item.Map)
+                                    @*     @Html.DisplayFor(modelItem => item.Map) *@
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Facebook)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Instagram)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Tiktok)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Youtube)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Twitter)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Linkedin)
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditContactInfo" asp-route-id="@item.Id" class="btn btn-success">შესწორება</a>
+                                        <br />
+                                        <a asp-action="DeleteContactInfo" asp-route-id="@item.Id" class="btn btn-danger">წაშლა</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

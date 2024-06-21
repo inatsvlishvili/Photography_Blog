@@ -1,0 +1,41 @@
+﻿<div class="alime-portfolio-area section-padding-80 clearfix">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="alime-projects-menu">
+                    <div class="portfolio-menu text-center">
+                        <button class="btn active" data-filter="*">ყველა</button>
+
+                        @foreach (var item in ViewBag.category)
+                        {
+                            <button class="btn" data-filter=".@item.Title">@item.TitleGEO</button>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alime-blog-area owl-video-frame section-padding-80-0 mb-70">
+            <div class="container">
+                <div class="row">
+                    @{
+                        Random r = new Random();
+                        foreach (var item in ViewBag.video)
+                        {
+                            var randomInt = r.Next(100, 700);
+                            <div class="col-12 col-lg-4">
+                                <div class="about-video-area mb-80 wow fadeInUp" @item.PhotoCategoryName data-wow-delay="@(randomInt)ms">
+                                    <img src="~/images/VideoImage/@item.ImageName" alt="">
+                                    <div class="video-icon">
+                                        <a href="@item.VideoUrl" class="video-play-btn"><i class="arrow_triangle-right"></i></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+

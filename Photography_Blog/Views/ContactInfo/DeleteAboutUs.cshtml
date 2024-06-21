@@ -1,0 +1,85 @@
+﻿@model Photography_Blog.ViewModels.AboutUsViewModel
+
+@{
+    ViewData["Title"] = "DeleteAboutUs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>ჩვენ შესახებ ტექსტი</h1>
+            <div class="card">
+                <div class="card-header">
+                    <h3>ნამდვილად გსურთ ამ ტექსტის წაშლა?</h3>
+                    <div>
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                ტექსტ1
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Text1)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ტექსტ2
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Text2)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ტექსტ3
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Text3)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ტექსტ4
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Text4)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ტექსტ5
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Text5)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ტექსტ6
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Text6)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ტექსტ7
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Text7)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ქვეტექსტი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.BlockquoteText)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ქვეტექსტის სათაური
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.BlockquoteTitle)
+                            </dd>
+                        </dl>
+
+                        <form asp-action="DeleteAboutUs">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="წაშლა" class="btn btn-danger" />
+                            <div>
+                                <a href="javascript:history.back()">უკან დაბრუნება</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,88 @@
+﻿@model Photography_Blog.ViewModels.PagePhotoViewModel
+
+@{
+    ViewData["Title"] = "AddPageImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>გვერდის სურათის დამატება</h1>
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-action="AddPageImage" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="Title" class="control-label">სახელი</label>
+                                    <input asp-for="Title" class="form-control" />
+                                    <span asp-validation-for="Title" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PhotoUrl" class="control-label">სურათის ლინკი</label>
+                                    <input asp-for="PhotoUrl" class="form-control" />
+                                    <span asp-validation-for="PhotoUrl" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label">აღწერა</label>
+                                    <input asp-for="Description" class="form-control" />
+                                    <span asp-validation-for="Description" class="text-danger"></span>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label asp-for="CategoryId" class="control-label">აირჩიეთ კატეგორია</label>
+                                    <select asp-for="CategoryId" class="form-select">
+                                        <option selected>არჩევა</option>
+                                        @foreach (var item in ViewBag.Categories)
+                                        {
+                                            <option value="@item.Id">@item.TitleGEO</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label asp-for="PagePhotoCategoryId" class="control-label">აირჩიეთ კატეგორია</label>
+                                    <select asp-for="PagePhotoCategoryId" class="form-select">
+                                        <option selected>არჩევა</option>
+                                        @foreach (var item in ViewBag.pagePhotoCategories)
+                                        {
+                                            <option value="@item.Id">@item.TitleGEO</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="PhotographerId" class="control-label">აირჩიეთ ფოტოგრაფი</label>
+                                    <select asp-for="PhotographerId" class="form-select">
+                                        <option selected>არჩევა</option>
+                                        @foreach (var item in ViewBag.photographers)
+                                        {
+                                            <option value="@item.Id">@item.FirstName @item.LastName</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group">
+
+                                    <label asp-for="ImageFile" class="control-label">აირჩიეთ სურათი</label>
+                                    <input class="form-control" type="file" name="ImageFile" placeholder="Rounded Input" />
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                    <input type="submit" value="დამატება" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="javascript:history.back()">უკან დაბრუნება</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

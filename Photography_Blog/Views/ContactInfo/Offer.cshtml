@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Photography_Blog.ViewModels.OfferViewModel>
+
+@{
+    ViewData["Title"] = "Offer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <h1>მთავარი გვერდი შეთავაზება</h1>
+            <a asp-action="AddOffer" class="btn btn-warning">ახლის შექმნა</a>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    სათაური1
+                                </th>
+                                <th>
+                                    ტექსტ1
+                                </th>
+                                <th>
+                                    სათაური2
+                                </th>
+                                <th>
+                                    ტექსტ2
+                                </th>
+                                <th>
+                                    სათაური3
+                                </th>
+                                <th>
+                                    ტექსტ3
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Title3)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text3)
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditOffer" asp-route-id="@item.Id" class="btn btn-success">შესწორება</a>
+                                        <a asp-action="DeleteOffer" asp-route-id="@item.Id" class="btn btn-danger">წაშლა</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

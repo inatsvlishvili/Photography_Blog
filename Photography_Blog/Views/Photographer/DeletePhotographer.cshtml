@@ -1,0 +1,86 @@
+﻿@model Photography_Blog.ViewModels.PhotographerViewModel
+
+@{
+    ViewData["Title"] = "DeletePhotographer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="table-form">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4">
+            <h1>ფოტოგრაფის წაშლა</h1>
+            <div class="card">
+                <div class="card-header">
+                    <h3>ნამდვილად გსურთ ამ ფოტოგრაფის წაშლა?</h3>
+                    <div>
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                სახელი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.FirstName)
+                            </dd>
+                            <dt class="col-sm-2">
+                                გვარი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.LastName)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ნიკი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.NickName)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ასაკი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Age)
+                            </dd>
+                            <dt class="col-sm-2">
+                                დაბადების თარიღი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.DateOfBirth)
+                            </dd>
+                            <dt class="col-sm-2">
+                                გამოცდილება
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Experience)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ბიოგრაფია
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.ShortBio)
+                            </dd>
+                            <dt class="col-sm-2">
+                                პირადი სურათი
+                            </dt>
+                            <dd class="col-sm-10">
+                                <img src="~/Images/Photographer/@Model.ImageName" class="rounded-circle" style="width: 100px; height: 100px;" asp-append-version="true" />
+                            </dd>
+                            <dt class="col-sm-2">
+                                გვარდის სურათი
+                            </dt>
+                            <dd class="col-sm-10">
+                                <img src="~/Images/Photographer/@Model.PageImageName" class="rounded-circle" style="width: 100px; height: 100px;" asp-append-version="true" />
+                            </dd>
+                        </dl>
+                        <form asp-action="DeletePhotographer" method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="წაშლა" class="btn btn-danger" />
+                            <div>
+                                <a href="javascript:history.back()">უკან დაბრუნება</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>

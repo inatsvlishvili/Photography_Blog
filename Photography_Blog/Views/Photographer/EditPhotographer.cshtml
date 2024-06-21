@@ -1,0 +1,87 @@
+﻿@model Photography_Blog.ViewModels.PhotographerViewModel
+
+@{
+    ViewData["Title"] = "EditPhotographer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>ფოტოგრაფის შესწორება</h1>
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-action="EditPhotographer" method="post" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label">სახელი</label>
+                                    <input asp-for="FirstName" class="form-control" />
+                                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="LastName" class="control-label">გვარი</label>
+                                    <input asp-for="LastName" class="form-control" />
+                                    <span asp-validation-for="LastName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="NickName" class="control-label">ზედმეტი სახელი</label>
+                                    <input asp-for="NickName" class="form-control" />
+                                    <span asp-validation-for="NickName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Age" class="control-label">ასაკი</label>
+                                    <input asp-for="Age" class="form-control" />
+                                    <span asp-validation-for="Age" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="DateOfBirth" class="control-label">დაბადების თარიღი</label>
+                                    <input asp-for="DateOfBirth" class="form-control" />
+                                    <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Experience" class="control-label">გამოცდილება</label>
+                                    <textarea id="Experience" class="form-control" name="Experience" rows="3">@Model.Experience</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="ShortBio" class="control-label">ბიოგრაფია</label>
+                                    <textarea id="ShortBio" class="form-control" name="ShortBio" rows="5">@Model.ShortBio</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PersonalImage">
+                                        <h6>ფოტოგრაფის პირადი სურათი 200x200</h6>
+                                        <h6>ასარჩევად დააჭირეთ სურათს</h6>
+                                        <input type="file" name="PersonalImage" id="PersonalImage" style="display:none;" />
+                                        <img src="~/images/Photographer/@Model.ImageName" style="width:100%;height:200px; border-radius: 50%;" />
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="PageImage">
+                                        <h6>ფოტოგრაფის გვერდის სურათი 1024x768</h6>
+                                        <h6>ასარჩევად დააჭირეთ სურათს</h6>
+                                        <input type="file" name="PageImage" id="PageImage" style="display:none;" />
+                                        <img src="~/images/Photographer/@Model.PageImageName" style="width:100%;height:200px; border-radius: 50%;" />
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="დამატება" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="javascript:history.back()">უკან დაბრუნება</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

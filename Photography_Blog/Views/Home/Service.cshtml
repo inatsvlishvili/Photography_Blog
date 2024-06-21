@@ -1,0 +1,180 @@
+﻿@model IEnumerable<Photography_Blog.ViewModels.ContactViewModel>
+
+@{
+    ViewData["Title"] = "Service";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<section class="welcome-area">
+    <div class="welcome-slides owl-carousel">
+        @foreach (var item in ViewBag.ServiceCover)
+        {
+            <div class="breadcrumb-area blog bg-img bg-overlay jarallax" style="background-image: url('@Url.Content("~/Images/pageimages/ServiceCoverPhoto/" + item.ImageName)');">
+
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12">
+                            <div class="breadcrumb-content text-center">
+                                <a href="#" class="btn post-catagory">@item.Title</a>
+                                <h2 class="page-title">@item.Description</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<div class="alime--blog-area section-padding-80">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+                <div class="blog-details-text">
+                    <p>@ViewBag.AboutUs.Text1</p>
+                    <p>@ViewBag.AboutUs.Text2</p>
+                    <div class="my-5">
+                        <div class="row">
+                            <div class="col-12 col-lg-8">
+                                <div class="row">
+                                    <div class="col-12 col-sm-6">
+                                        <img class="mb-10" src="~/assets/page/img/bg-img/60.jpg" alt="">
+                                    </div>
+                                    <div class="col-12 col-sm-6">
+                                        <img class="mb-10" src="~/assets/page/img/bg-img/61.jpg" alt="">
+                                    </div>
+                                    <div class="col-12">
+                                        <img class="mb-10" src="~/assets/page/img/bg-img/63.jpg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                <img class="mb-10" src="~/assets/page/img/bg-img/62.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <p>@ViewBag.AboutUs.Text3</p>
+                    <p>@ViewBag.AboutUs.Text4</p>
+                    <p>@ViewBag.AboutUs.Text5</p>
+                    <p>@ViewBag.AboutUs.Text6</p>
+                    <p>@ViewBag.AboutUs.Text7</p>
+
+                    <blockquote class="alime-blockquote">
+                        <h4>@ViewBag.AboutUs.BlockquoteText</h4>
+                        <h6>- @ViewBag.AboutUs.BlockquoteTitle</h6>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="why-choose-us-area bg-gray section-padding-80-0 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                    <h2>ჩვენი სერვისები</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach (var item in ViewBag.service)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="300ms">
+                        <img src="~/images/service/@item.ImageName" alt="">
+                        <h3>@item.Title</h3>
+                        <h6>@item.Package</h6>
+                        <p>@item.Price ₾</p>
+                        <ul class="list-unstyled text-left">
+                            <ul>
+                                <li>@Html.Raw(item.Description.Replace(Environment.NewLine, "<br>"))</li>
+                            </ul>
+                        </ul>
+                        <div class="container">
+                            <ul class="list-unstyled text-left">
+                                <ul>
+                                    <li></li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<div class="comment-area section-padding-80">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="alime-contact-form mt-50">
+                    <h4 class="mb-30">დაგვიტოვეთ შეტყობინება</h4>
+                    <form asp-action="Service" method="post">
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <input type="text" name="name" class="form-control mb-30" id="Name" placeholder="სახელი" required>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="tel" name="phone" class="form-control mb-30" id="Phone" placeholder="ტელეფონი" required>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <input type="email" name="email" class="form-control mb-30" id="Email" placeholder="მეილი" required>
+                            </div>
+                            <div class="col-12">
+                                <input type="text" name="subject" class="form-control mb-30" id="Subject" placeholder="სათაური" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea id="CommentTXT" name="commentTXT" class="form-control mb-30" placeholder="ტექსტი" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" id="form-submit" class="btn alime-btn btn-2 mt-15">გაგზავნა</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-area section-padding-80-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <h2 class="contact-title mb-30">
+                    <blockquote class="alime-blockquote">
+                        <h3>@ViewBag.contactinfo.Title</h3>
+                    </blockquote>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="contact-info mb-30">
+                    <p>მეილი</p>
+                    <a href="mailto:(@ViewBag.contactinfo.Email)">@ViewBag.contactinfo.Email</a>
+                </div>
+                <div class="contact-info mb-30">
+                    <p>ტელეფონი</p>
+                    <a href="#">@ViewBag.contactinfo.Phone</a>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <div class="contact-info mb-30">
+                    <p>მისამართი</p>
+                    <a href="#">@ViewBag.contactinfo.Address</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="map-area section-padding-0-80">
+    <div class="container">
+        <div id="map">
+            <iframe src="@ViewBag.contactinfo.Map" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+

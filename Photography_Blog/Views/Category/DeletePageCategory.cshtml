@@ -1,0 +1,46 @@
+﻿@model Photography_Blog.ViewModels.PagePhotoCategoryViewModel
+
+@{
+    ViewData["Title"] = "DeletePageCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section id="table-form">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-4">
+            <h1>გვერდის სურათის კატეგორიები</h1>
+            <p class="card-text">
+                გაითვალისწინეთ! არჩეული კატეგორიის წაშლის შემთხვევაში
+                აღარ გამოჩნდება საიტზე ამ კატეგორიაზე მიბმული სურათები
+            </p>
+            <div class="card">
+                <div class="card-header">
+                    <h3>ნამდვილად გსურთ ამ სურათის კატეგორიის წაშლა?</h3>
+                    <div>
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                სახელი ინგლისურად
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Title)
+                            </dd>
+                            <dt class="col-sm-2">
+                                სახელი ქართულად
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.TitleGEO)
+                            </dd>
+                        </dl>
+                        <form asp-action="DeletePageCategory">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="წაშლა" class="btn btn-danger" />
+                            <div>
+                                <a href="javascript:history.back()">უკან დაბრუნება</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

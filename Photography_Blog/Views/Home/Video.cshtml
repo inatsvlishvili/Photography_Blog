@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Video";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="canvas gallery">
+    <br>
+    <span class="title-divider"></span>
+    </section>
+    <section id="photostack-3" class="photostack">
+        <div>
+
+            @foreach (var item in ViewBag.video)
+            {
+                <figure>
+                    <div class="about-video-area mb-80 wow">
+                        <img src="~/images/VideoImage/@item.ImageName" alt="">
+                        <div class="video-icon">
+                            <a href="@item.VideoUrl" class="video-play-btn"><i class="arrow_triangle-right"></i></a>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h2 class="photostack-title">@item.Title</h2>
+                    </figcaption>
+                </figure>
+            }
+
+            @foreach (var item in ViewBag.video)
+            {
+                <figure data-dummy>
+                    <div class="about-video-area mb-80 wow">
+                        <img src="~/images/VideoImage/@item.ImageName" alt="">
+                        <div class="video-icon">
+                            <a href="@item.VideoUrl" class="video-play-btn"><i class="arrow_triangle-right"></i></a>
+                        </div>
+                    </div>
+                    <figcaption>
+                        <h2 class="photostack-title">@item.Title</h2>
+                    </figcaption>
+                </figure>
+            }
+
+        </div>
+    </section>
+</div>
+
+@await Html.PartialAsync("VideoPartial")
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+

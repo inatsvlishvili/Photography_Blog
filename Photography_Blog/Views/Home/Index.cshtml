@@ -1,0 +1,257 @@
+﻿@model IEnumerable<Photography_Blog.ViewModels.PhotoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="welcome-area">
+    <div class="welcome-slides owl-carousel">
+
+        @foreach (var item in ViewBag.mainpagecover)
+        {
+            <div class="single-welcome-slide bg-img bg-overlay" style="background-image: url('@Url.Content("~/Images/pageimages/MainPageCover/" + item.ImageName)');">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center">
+                        <div class="col-12 col-lg-8 col-xl-6">
+                            <div class="welcome-text">
+                                <h2 data-animation="bounceInDown" data-delay="500ms">@item.Title</h2>
+                                <p data-animation="bounceInDown" data-delay="300ms">@item.Description აღწერის ტექსტი</p>
+                                <div class="hero-btn-group" data-animation="bounceInDown" data-delay="100ms">
+                                    <a href="/Home/Photo" class="btn alime-btn mb-3 mb-sm-0 mr-4">@item.Category.TitleGEO</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+<section class="why-choose-us-area bg-gray section-padding-80-0 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                    <h2>კატეგორია</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="alime-blog-area section-padding-80-0 mb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
+                        <a href="#" class="post-thumbnail"><img src="~/images/pageimages/MainPageCategory/@ViewBag.mainpagecategory.ImageName" alt=""></a>
+                        <a href="#" class="btn post-catagory"><b>ოჯახი</b></a>
+                        <div class="post-content">
+                            <a href="#" class="post-title">@ViewBag.mainpagecategory.Title</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="700ms">
+                        <a href="#" class="post-thumbnail"><img src="~/assets/page/img/bg-img/couple.jpg" alt=""></a>
+                        <a href="#" class="btn post-catagory"><b>წყვილი</b></a>
+                        <div class="post-content">
+                            <a href="#" class="post-title">@ViewBag.mainpagecategory.Title</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-3">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
+                        <a href="#" class="post-thumbnail"><img src="~/assets/page/img/bg-img/street.jpg" alt=""></a>
+                        <a href="#" class="btn post-catagory"><b>ქუჩა</b></a>
+                        <div class="post-content">
+                            <a href="#" class="post-title">@ViewBag.mainpagecategory.Title</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="400ms">
+                        <a href="#" class="post-thumbnail"><img src="~/assets/page/img/bg-img/wedding.jpg" alt=""></a>
+                        <a href="#" class="btn post-catagory"><b>ქორწილი</b></a>
+                        <div class="post-content">
+                            <a href="#" class="post-title">@ViewBag.mainpagecategory.Title</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-3">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="100ms">
+                        <a href="#" class="post-thumbnail"><img src="~/assets/page/img/bg-img/person.jpeg" alt=""></a>
+                        <a href="#" class="btn post-catagory"><b>პერსონალური</b></a>
+                        <div class="post-content">
+                            <a href="#" class="post-title">@ViewBag.mainpagecategory.Title</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="400ms">
+                        <a href="#" class="post-thumbnail"><img src="~/assets/page/img/bg-img/Interior.jpg" alt=""></a>
+                        <a href="#" class="btn post-catagory"><b>ინტერიერი</b></a>
+                        <div class="post-content">
+                            <a href="#" class="post-title">@ViewBag.mainpagecategory.Title</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="single-post-area wow fadeInUpBig" data-wow-delay="300ms">
+                        <a href="#" class="post-thumbnail"><img src="~/assets/page/img/bg-img/nature.jpg" alt=""></a>
+                        <a href="#" class="btn post-catagory"><b>ბუნება</b></a>
+                        <div class="post-content">
+                            <a href="#" class="post-title">@ViewBag.mainpagecategory.Title</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="about-us-area section-padding-80-0 clearfix">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6">
+                <div class="about-us-content mb-80">
+                    <h3 class="wow fadeInUp" data-wow-delay="100ms">@ViewBag.MainText.Title</h3>
+                    <div class="line wow fadeInUp" data-wow-delay="200ms"></div>
+                    <p class="wow fadeInUp" data-wow-delay="300ms">@ViewBag.MainText.Text1</p>
+                    <p class="wow fadeInUp" data-wow-delay="400ms">@ViewBag.MainText.Text2</p>
+                    <p class="wow fadeInUp" data-wow-delay="500ms">@ViewBag.MainText.Text3</p>
+                    <a class="btn alime-btn btn-2 mt-30 wow fadeInUp" data-wow-delay="500ms" href="@Url.Action("Service", "Home", new { id = @ViewBag.MainText.Id })">სერვისის ნახვა</a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="about-video-area mb-80 wow fadeInUp" data-wow-delay="100ms">
+                    <img src="~/images/MainPageText/@ViewBag.MainText.ImageName1" alt="">
+                    <div class="video-icon">
+                        <a href="@ViewBag.MainText.VideoUrl1" class="video-play-btn"><i class="arrow_triangle-right"></i></a>
+                    </div>
+                </div>
+                <div class="about-video-area mb-80 wow fadeInUp" data-wow-delay="100ms">
+                    <img src="~/images/MainPageText/@ViewBag.MainText.ImageName2" alt="">
+                    <div class="video-icon">
+                        <a href="@ViewBag.MainText.VideoUrl2" class="video-play-btn"><i class="arrow_triangle-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="why-choose-us-area bg-gray section-padding-80-0 clearfix">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                    <h2>რატომ აგვირჩიო ჩვენ?</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-lg-4">
+                <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="300ms">
+                    <div class="chosse-us-icon">
+                        <i class="fa fa-camera" aria-hidden="true"></i>
+                    </div>
+                    <h4>@ViewBag.offer.Title1</h4>
+                    <p>@ViewBag.offer.Text1</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="500ms">
+                    <div class="chosse-us-icon">
+                        <i class="fa fa-film" aria-hidden="true"></i>
+                    </div>
+                    <h4>@ViewBag.offer.Title2</h4>
+                    <p>@ViewBag.offer.Text2</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="700ms">
+                    <div class="chosse-us-icon">
+                        <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </div>
+                    <h4>@ViewBag.offer.Title3</h4>
+                    <p>@ViewBag.offer.Text3</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="our-team-area section-padding-80-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
+                    <h2>ჩვენი გუნდი</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            @foreach (var item in ViewBag.persons)
+            {
+                <div class="col-md-6 col-xl-4">
+                    <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="member-thumb">
+                            <a href="@Url.Action("Photographer", "Home", new { id = item.Id })">
+                                <img src="~/Images/Photographer/@item.ImageName" alt="">
+                            </a>
+                        </div>
+                        <h5><b>@item.FirstName @item.LastName</b></h5>
+                        <span><b>@item.NickName</b></span>
+                        <div class="member-social-info">
+                            <a href="#"><i class="ti-facebook"></i></a>
+                            <a href="#"><i class="ti-twitter-alt"></i></a>
+                            <a href="#"><i class="ti-linkedin"></i></a>
+                            <a href="#"><i class="ti-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="follow-area clearfix">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h2>გამოგვყევით ინსტაგრამზე</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instragram-feed-area owl-carousel">
+            @foreach (var item in ViewBag.cateimage)
+            {
+                <div class="single-instagram-item">
+                    <img src="~/images/pageimages/MainPageInstagram/@item.ImageName" alt="" style="width: 317px; height: 317px;">
+                    <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
+                        <a href="@ViewBag.ContactInfo.Instagram">
+                            <i class="ti-instagram" aria-hidden="true"></i>
+                            <span>@item.Title</span>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+</section>
+

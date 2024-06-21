@@ -1,0 +1,38 @@
+﻿
+<div class="alime-portfolio-area section-padding-80 clearfix">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="alime-projects-menu">
+                    <div class="portfolio-menu text-center">
+                        <button class="btn active" data-filter="*">ყველა</button>
+
+                        @foreach (var item in ViewBag.category)
+                        {
+                            <button class="btn" data-filter=".@item.Title">@item.TitleGEO</button>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row alime-portfolio">
+            @{
+                Random r = new Random();
+                foreach (var item in ViewBag.photo)
+                {
+                    var randomInt = r.Next(100, 700);
+
+                    <div class="col-12 col-sm-6 col-lg-3 single_gallery_item @item.PhotoCategoryName mb-30 wow fadeInUp" data-wow-delay="@(randomInt)ms">
+                        <div class="single-portfolio-content">
+                            <img src="~/Images/photo/@item.PhotoCategoryName/@item.ImageName" alt="">
+                            <div class="hover-content">
+                                <a href="~/Images/photo/@item.PhotoCategoryName/@item.ImageName" class="portfolio-img">+</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+

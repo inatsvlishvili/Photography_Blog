@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Photography Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/themify-icons/0.1.2/css/themify-icons.css">
+    <link rel="stylesheet" href="~/assets/page/style.css" asp-append-version="true">
+    <link href="~/assets/slide/css/style.css" rel="stylesheet" asp-append-version="true">
+    <link rel="stylesheet" type="text/css" href="~/assets/slide/css/component.css" asp-append-version="true" />
+    <link href="~/assets/slide/css/lightbox.css" rel="stylesheet" type="text/css" asp-append-version="true" />
+
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <header class="header-area">
+        <div class="main-header-area">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container">
+                    <nav class="classy-navbar justify-content-between" id="alimeNav">
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+                        <div class="classy-menu">
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+                            <div class="classynav">
+                                <ul id="nav">
+                                    <li class="active"><a href="/Home/Index">მთავარი</a></li>
+                                    <li>
+                                        <a href="/Home/Photo">სურათები</a>
+                                    <li>
+                                        <a href="/Home/Video">ვიდეოები</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/OurTeam">ჩვენი გუნდი</a>
+                                    </li>
+                                    <li>
+                                        <a href="/Home/Service">სერვისები</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <footer class="footer-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="footer-content d-flex align-items-center justify-content-between">
+                        <div class="copywrite-text">
+                            <p>
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="#" target="_blank">Photography Blog</a>
+                            </p>
+                        </div>
+
+                        <div class="social-info">
+                            <a href="@ViewBag.ContactInfo.Facebook"><i class="ti-facebook" aria-hidden="true"></i></a>
+                            <a href="@ViewBag.ContactInfo.Twitter"><i class="ti-twitter-alt" aria-hidden="true"></i></a>
+                            <a href="@ViewBag.ContactInfo.Linkedin"><i class="ti-linkedin" aria-hidden="true"></i></a>
+                            <a href="@ViewBag.ContactInfo.Instagram"><i class="ti-instagram" aria-hidden="true"></i></a>
+                            <a href="@ViewBag.ContactInfo.Tiktok"><i class="ti-tumblr-alt" aria-hidden="true"></i></a>
+                            <a href="@ViewBag.ContactInfo.Youtube"><i class="ti-youtube" aria-hidden="true"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/assets/page/js/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/assets/page/js/popper.min.js" asp-append-version="true"></script>
+    <script src="~/assets/page/js/bootstrap.min.js" asp-append-version="true"></script>
+    <script src="~/assets/page/js/alime.bundle.js" asp-append-version="true"></script>
+    <script src="~/assets/page/js/default-assets/active.js" asp-append-version="true"></script>
+    <script type="text/javaScript" src="~/assets/slide/js/modernizr.min.js"></script>
+    <script src="~/assets/slide/js/classie.js" asp-append-version="true"></script>
+    <script src="~/assets/slide/js/photostack.js" asp-append-version="true"></script>
+    <script src="~/assets/slide/js/main.js" asp-append-version="true"></script>
+    <script src="~/assets/slide/js/lightbox.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var page = sessionStorage.getItem('page');
+        var navbar = $('li');
+
+        if (page == null) {
+            $(navbar[0]).addClass('active');
+        } else {
+            navbar.each(function () {
+                var link = $(this).children('a').attr('href');
+                if (link == page) {
+                    $(this).addClass('active').siblings().removeClass('active');
+                }
+            });
+        }
+
+        $('ul li').on('click', function () {
+            var link = $(this).children('a').attr('href');
+            sessionStorage.setItem('page', link);
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+    });
+</script>

@@ -1,0 +1,59 @@
+﻿@model Photography_Blog.ViewModels.ContactViewModel
+
+@{
+    ViewData["Title"] = "EditMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h1>შეტყობინების შესწორება</h1>
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-9">
+                        <form asp-action="EditMessage" method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label">სახელი</label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Phone" class="control-label">ტელეფონი</label>
+                                <input asp-for="Phone" class="form-control" />
+                                <span asp-validation-for="Phone" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label">მეილი</label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Subject" class="control-label">სათაური</label>
+                                <input asp-for="Subject" class="form-control" />
+                                <span asp-validation-for="Subject" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CommentTXT" class="control-label">ტექსტი</label>
+                                <textarea id="CommentTXT" class="form-control" name="CommentTXT" rows="8">@Model.CommentTXT</textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="შენახვა" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <a href="javascript:history.back()">უკან დაბრუნება</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

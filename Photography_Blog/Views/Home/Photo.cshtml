@@ -1,0 +1,41 @@
+﻿@model List<Photo>
+
+@{
+    ViewData["Title"] = "Photo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="canvas gallery">
+    <br>
+    <span class="title-divider"></span>
+    <section id="photostack-3" class="photostack">
+        <div>
+            @foreach (var item in ViewBag.pagephoto)
+            {
+                <figure>
+                    <a href="~/images/pageimages/PhotoStack/@item.ImageName" data-lightbox="studio2" class="photostack-img"><img src="~/images/pageimages/PhotoStack/@item.ImageName"></a>
+                    <figcaption>
+                        <h2 class="photostack-title">@item.Title</h2>
+                    </figcaption>
+                </figure>
+            }
+
+            @foreach (var item in ViewBag.otherpagephoto)
+            {
+                <figure data-dummy>
+                    <a href="#" class="photostack-img"><img src="~/images/pageimages/OtherPhotoStack/@item.ImageName" /></a>
+                    <figcaption>
+                        <h2 class="photostack-title">@item.Title</h2>
+                    </figcaption>
+                </figure>
+            }
+        </div>
+    </section>
+</div>
+
+@await Html.PartialAsync("PhotoPartial")
+
+    </div>
+</div>
+    </section>
+

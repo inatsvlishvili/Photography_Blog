@@ -1,0 +1,46 @@
+﻿@model Photography_Blog.ViewModels.PagePhotoCategoryViewModel
+
+@{
+    ViewData["Title"] = "EditPageCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h1>სხვა კატეგორიის სახელის შესწორება</h1>
+                <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-4">
+                        <form asp-action="EditPageCategory" method="post" enctype="multipart/form-data">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <input type="hidden" asp-for="Id" />
+                            <div class="form-group">
+                                <label asp-for="Title" class="control-label">სახელი ინგლისურად</label>
+                                <input asp-for="Title" class="form-control" />
+                                <span asp-validation-for="Title" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="TitleGEO" class="control-label">სახელი ქართულად</label>
+                                <input asp-for="TitleGEO" class="form-control" />
+                                <span asp-validation-for="TitleGEO" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="შენახვა" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <a href="javascript:history.back()">უკან დაბრუნება</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        @{
+            await Html.RenderPartialAsync("_ValidationScriptsPartial");
+        }
+    }

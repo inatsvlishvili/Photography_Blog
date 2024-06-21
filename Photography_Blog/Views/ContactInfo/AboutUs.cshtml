@@ -1,0 +1,91 @@
+﻿@model IEnumerable<Photography_Blog.ViewModels.AboutUsViewModel>
+
+@{
+    ViewData["Title"] = "AboutUs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-9">
+            <h1>ჩვენ შესახებ ტექსტი</h1>
+            <a asp-action="AddAboutUs" class="btn btn-warning">ახლის შექმნა</a>
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-striped" id="table1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    ტექსტ1
+                                </th>
+                                <th>
+                                    ტექსტ2
+                                </th>
+                                <th>
+                                    ტექსტ3
+                                </th>
+                                <th>
+                                    ტექსტ4
+                                </th>
+                                <th>
+                                    ტექსტ5
+                                </th>
+                                <th>
+                                    ტექსტ6
+                                </th>
+                                <th>
+                                    ტექსტ7
+                                </th>
+                                <th>
+                                    ქვეტექსტი
+                                </th>
+                                <th>
+                                    ქვეტექსტის სათაური
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text3)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text4)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text5)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text6)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Text7)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BlockquoteText)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.BlockquoteTitle)
+                                    </td>
+                                    <td>
+                                        <a asp-action="EditAboutUs" asp-route-id="@item.Id" class="btn btn-success">შესწორება</a>
+                                        <a asp-action="DeleteAboutUs" asp-route-id="@item.Id" class="btn btn-danger">წაშლა</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

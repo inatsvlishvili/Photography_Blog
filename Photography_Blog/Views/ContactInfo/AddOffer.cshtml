@@ -1,0 +1,56 @@
+﻿@model Photography_Blog.ViewModels.OfferViewModel
+
+@{
+    ViewData["Title"] = "AddOffer";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <h1>მთავარი გვერდის შეთავაზების დამატება</h1>
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-11">
+                        <form asp-action="AddOffer" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group">
+                                <label asp-for="Title1" class="control-label">სათაური1</label>
+                                <input asp-for="Title1" class="form-control" />
+                                <span asp-validation-for="Title1" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Text1" class="control-label">ტექსტ1</label>
+                                <textarea id="Text1" class="form-control" name="Text1" rows="8"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Title2" class="control-label">სათაური2</label>
+                                <input asp-for="Title2" class="form-control" />
+                                <span asp-validation-for="Title2" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Text2" class="control-label">ტექსტ2</label>
+                                <textarea id="Text2" class="form-control" name="Text2" rows="8"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Title3" class="control-label">სათაური3</label>
+                                <input asp-for="Title3" class="form-control" />
+                                <span asp-validation-for="Title3" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Text3" class="control-label">ტექსტ3</label>
+                                <textarea id="Text3" class="form-control" name="Text3" rows="8"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="დამატება" class="btn btn-primary" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div>
+                    <a href="javascript:history.back()">უკან დაბრუნება</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

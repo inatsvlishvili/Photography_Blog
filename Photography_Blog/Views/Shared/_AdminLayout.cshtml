@@ -1,0 +1,292 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<ApplicationUser> signInManager;
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography_Blog Admin Panel</title>
+    <link rel="stylesheet" href="~/assets/admin/compiled/css/table-datatable.css">
+    <link rel="stylesheet" href="~/assets/admin/compiled/css/app.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/assets/admin/compiled/css/app-dark.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/assets/admin/compiled/css/iconly.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/assets/admin/compiled/css/application-email.css" asp-append-version="true">
+    <link rel="stylesheet" href="~/assets/page/style.css" asp-append-version="true">
+    <script src="~/assets/admin/static/js/initTheme.js"></script>
+</head>
+<body>
+   
+    <div id="app">
+        <div id="main" class="layout-horizontal">
+            <header class="mb-5">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="logo">
+                        </div>
+                        <div class="header-top-right">
+                            @if (signInManager.IsSignedIn(User))
+                            {
+                                <form method="post">
+                                    <div class="dropdown">
+                                        <a href="#" id="topbarUserDropdown" class="user-dropdown d-flex align-items-center dropend dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
+                                            <div class="avatar avatar-md2">
+                                                <img src="~/images/Admin/faa4f34f-64fb-49ad-8c4f-d6dbc935f33c.jpg" alt="Avatar">
+                                            </div>
+                                            <div class="text">
+                                                <h6 class="user-dropdown-name">@User.Identity.Name</h6>
+                                                <p class="user-dropdown-status text-sm text-muted">მენეჯერი!</p>
+                                            </div>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="topbarUserDropdown">
+                                            <li><a class="dropdown-item" href="#">ჩემი ექაუნთი</a></li>
+                                            <li><hr class="dropdown-divider"></li>
+                                            <li><a class="dropdown-item" href="auth-login.html">გასვლა</a></li>
+                                        </ul>
+                                    </div>
+                                </form>
+
+                            }
+                            <a href="#" class="burger-btn d-block d-xl-none">
+                                <i class="bi bi-justify fs-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="main-navbar">
+                    <div class="container">
+                        <ul>
+                            <li class="menu-item  ">
+                                <a href="/admin/index" class='menu-link'>
+                                    <span><i class="bi bi-grid-fill"></i> მთავარი</span>
+                                </a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/ContactInfo/Message" class='menu-link'>
+                                    <span><i class="bi bi-envelope-fill"></i> შეტყობინება</span>
+                                </a>
+                            </li>
+                            <li class="menu-item active has-sub">
+                                <a href="#" class='menu-link'>
+                                    <span><i class="bi bi-image"></i> სურათები</span>
+                                </a>
+                                <div class="submenu ">
+                                    <div class="submenu-group-wrapper">
+
+                                        <ul class="submenu-group">
+                                            <li class="submenu-item  ">
+                                                <a href="/image/image"
+                                                   class='submenu-link'>ყველა სურათი</a>
+                                            </li>
+                                            <li class="submenu-item  ">
+                                                <a href="/image/addimage"
+                                                   class='submenu-link'>სურათის დამატება</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="menu-item  has-sub">
+                                <a href="#" class='menu-link'>
+                                    <span><i class="bi bi-camera-reels-fill"></i> ვიდეოები</span>
+                                </a>
+                                <div class="submenu ">
+                                    <div class="submenu-group-wrapper">
+                                        <ul class="submenu-group">
+                                            <li class="submenu-item  ">
+                                                <a href="/Video/Video"
+                                                   class='submenu-link'>ყველა ვიდეო</a>
+                                            </li>
+                                            <li class="submenu-item  ">
+                                                <a href="/Video/AddVideo"
+                                                   class='submenu-link'>ვიდეოს დამატება</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="menu-item  has-sub">
+                                <a href="#" class='menu-link'>
+                                    <span><i class="bi-camera-fill"></i> ფოტოგრაფები</span>
+                                </a>
+                                <div class="submenu ">
+                                    <div class="submenu-group-wrapper">
+                                        <ul class="submenu-group">
+                                            <li class="submenu-item  ">
+                                                <a href="/Photographer/Photographer"
+                                                   class='submenu-link'>ყველა ფოტოგრაფი</a>
+                                            </li>
+                                            <li class="submenu-item  ">
+                                                <a href="/Photographer/AddPhotographer"
+                                                   class='submenu-link'>დამატება</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="menu-item  has-sub">
+                                <a href="#" class='menu-link'>
+                                    <span><i class="bi bi-bookmark-plus-fill"></i>კატეგორიები</span>
+                                </a>
+                                <div class="submenu ">
+                                    <div class="submenu-group-wrapper">
+                                        <ul class="submenu-group">
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>სურათი</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/Category/Category" class="subsubmenu-link">სურათის კატეგორია</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/Category/AddCategory" class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>გვერდი</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/Category/PageCategory" class="subsubmenu-link">გვერდის კატეგორია</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/Category/AddPageCategory" class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="menu-item  has-sub">
+                                <a href="#" class='menu-link'>
+                                    <span><i class="bi bi-file-earmark-fill"></i>გვერდის მართვა</span>
+                                </a>
+                                <div class="submenu ">
+                                    <div class="submenu-group-wrapper">
+                                        <ul class="submenu-group">
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>გვერდების სურათები</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/PageImage/PageImage" class="subsubmenu-link">სურათები</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/PageImage/AddPageImage" class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>მთავარი გვერდის ტექსტი</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/ContactInfo/MainPageText" class="subsubmenu-link">ტექსტი</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/ContactInfo/AddMainPageText" class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>მთავარი გვერდის შეთავაზება</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/ContactInfo/Offer" class="subsubmenu-link">ტექსტი</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/ContactInfo/AddOffer" class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="menu-item  has-sub">
+                                <a href="#" class='menu-link'>
+                                    <span><i class="bi bi-gear-fill"></i> სხვა</span>
+                                </a>
+                                <div class="submenu ">
+                                    <div class="submenu-group-wrapper">
+                                        <ul class="submenu-group">
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>საკონტაქტო ინფორმაცი</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/ContactInfo/ContactInfo" class="subsubmenu-link">ყველა ინფორმაცია</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/ContactInfo/AddContactInfo" class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>სერვისი</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/Service/Service" class="subsubmenu-link">ყველა სერვისი</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/Service/AddService" class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>ჩვენ შესახებ</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/ContactInfo/AboutUs" class="subsubmenu-link">ჩვენ შესახებ</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/ContactInfo/AddAboutUs" class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="submenu-item  has-sub">
+                                                <a href="#"
+                                                   class='submenu-link'>ადმინი</a>
+                                                <ul class="subsubmenu">
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/Admin/Users" class="subsubmenu-link">ყველა ადმინი</a>
+                                                    </li>
+                                                    <li class="subsubmenu-item ">
+                                                        <a href="/Admin/Register" " class="subsubmenu-link">დამატება</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+                                                        @RenderBody()
+
+            <script src="~/assets/admin/extensions/apexcharts/apexcharts.min.js"></script>
+            <script src="~/assets/admin/static/js/pages/dashboard.js"></script>
+            <script src="~/assets/admin/static/js/components/dark.js"></script>
+            <script src="~/assets/admin/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="~/assets/admin/extensions/simple-datatables/umd/simple-datatables.js"></script>
+            <script src="~/assets/admin/static/js/pages/simple-datatables.js"></script>
+            <script src="~/assets/admin/static/js/pages/horizontal-layout.js"></script>
+            <script src="~/assets/admin/extensions/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+            <script src="~/assets/admin/compiled/js/app.js"></script>
+                                                            @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

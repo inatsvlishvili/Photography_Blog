@@ -1,0 +1,72 @@
+﻿@model Photography_Blog.ViewModels.PhotoViewModel
+
+@{
+    ViewData["Title"] = "DeleteImage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<section id="table-form">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>სურათის წაშლა</h1>
+
+            <div class="card">
+                <div class="card-header">
+
+                    <h3>ნამდვილად გსურთ ამ სურათის წაშლა?</h3>
+                    <div>
+
+
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                სახელი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Title)
+                            </dd>
+                            <dt class="col-sm-2">
+                                სურათის ლინკი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.PhotoUrl)
+                            </dd>
+                            <dt class="col-sm-2">
+                                სურათი
+                            </dt>
+                            <dd class="col-sm-10">
+                                <img src="~/images/Photo/@Model.PhotoCategoryName/@Model.ImageName" class="rounded-Corners" style="width: 100px; height: 100px;" asp-append-version="true" />
+                            </dd>
+                            <dt class="col-sm-2">
+                                აღწერა
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Description)
+                            </dd>
+                            <dt class="col-sm-2">
+                                კატეგორია
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.PhotoCategoryNameGEO)
+                            </dd>
+                            <dt class="col-sm-2">
+                                ფოტოგრაფი
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.PhotographerName)
+                            </dd>
+                        </dl>
+
+                        <form asp-action="DeleteImage" method="post">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="წაშლა" class="btn btn-danger" />
+                            <div>
+                                <a href="javascript:history.back()">უკან დაბრუნება</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>

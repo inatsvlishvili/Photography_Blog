@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Photography_Blog.ViewModels.CategoryViewModel>
+
+@{
+    ViewData["Title"] = "Category";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<section class="section">
+    <div class="row justify-content-center" id="basic-table">
+        <div class="col-12 col-md-4">
+            <h1>სურათის კატეგორიები</h1>
+            <p class="card-text">
+                გაითვალისწინეთ! არჩეული კატეგორიის წაშლის შემთხვევაში
+                აღარ გამოჩნდება საიტზე ამ კატეგორიაზე მიბმული სურათები
+            </p>
+            <a asp-action="AddCategory" class="btn btn-warning">ახლის შექმნა</a>
+            <div class="card">
+                <div class="table-responsive">
+                    <table class="table table-lg">
+                        <thead>
+                            <tr>
+                                <th>სახელი ინგლისურად</th>
+                                <th>სახელი ქართულად</th>
+                                <th>მართვა</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="text-bold-500">@item.Title</td>
+                                    <td class="text-bold-500">@item.TitleGEO</td>
+                                    <td>
+                                        <a asp-action="EditCategory" asp-route-id="@item.Id" class="btn btn-success">შესწორება</a>
+                                        <a asp-action="DeleteCategory" asp-route-id="@item.Id" class="btn btn-danger">წაშლა</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
