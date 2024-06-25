@@ -1,4 +1,4 @@
-![Screenshot_9](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/ecd79d66-4479-47d7-8cc8-36b681c89c8b)Used technologies: ASP.Net Core, Entity Framework Core, MS SQL Server
+Used technologies: ASP.Net Core, Entity Framework Core, MS SQL Server
 
 The user can order a photo session or a video session online. For example: personal, wedding, banquet, etc.
 It is possible to view the photos of photographers.
@@ -8,21 +8,46 @@ See short video and pictures
 
 https://drive.google.com/file/d/1gvIHNpa94IhilsbEoM52I1SMSCpFkrkY/view?usp=sharing
 
-![Screenshot_10](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/b2a51898-f725-427c-935f-c35bb1af3915)
-![Screenshot_8](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/73d782de-c8e3-45ee-8bd4-ebc1ec38ae8f)
-![Screenshot_7](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/6d89e7a0-703a-45cf-9d20-d8d31b217af6)
-![Screenshot_6](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/1b05f97a-4893-4a90-a538-ba89a7d925ac)
-![Screenshot_5](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/2129966b-a06c-4498-8aaf-a46a880336e4)
-![Screenshot_4](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/cbf6559e-cfd8-4794-995f-b0f3df8e360a)
-![Screenshot_3](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/c3384290-1bd2-41be-a380-3d6d405e8f9f)
-![Screenshot_2](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/cf2f1c61-130f-4719-b1e9-dea86183843f)
-![Screenshot_1](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/9f785b3f-d3f5-4311-b764-ba12ea20dd88)
-![Screenshot_19](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/a4a0a3c6-8323-4623-8333-22eac2729074)
-![Screenshot_18](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/27cb6edb-1748-4503-8b94-436b64917e83)
-![Screenshot_17](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/1ec170e4-1955-406c-a779-7532466cb705)
-![Screenshot_16](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/d31fddbd-1152-467b-abb0-d743c7be6c0e)
-![Screenshot_15](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/2194b4cf-9de1-4ecd-a2d3-254bf428de21)
-![Screenshot_14](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/c10c7d92-7bdd-49ee-aeb1-e55402a7ff4a)
-![Screenshot_13](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/587e4ec4-a118-45d4-9cb5-a504bda3143d)
-![Screenshot_12](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/8bdaabb1-13da-4270-a9a5-d7c77fae5ee2)
-![Screenshot_11](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/a441f0d6-79e7-4ee1-856c-1b4a193d52c9)
+![Screenshot_10](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/e776a0f3-8e91-4092-a3b1-a0ba8b702a0d)
+![Screenshot_1](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/b21b9b34-b195-4a6f-95c8-6800aa6648a2)
+![Screenshot_2](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/e57912d0-b5cf-4404-b8e6-1b49e1b394ae)
+![Screenshot_3](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/a5b5df95-92f7-4f59-98df-85b2e6defe8d)
+![Screenshot_4](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/510decf3-a85b-438f-b21d-0367aa7e8235)
+![Screenshot_5](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/78de3bf2-46ec-49a8-ae93-28bf6514420f)
+![Screenshot_6](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/c49a9f6e-13c0-46a5-96f0-253e44acf3b9)
+![Screenshot_7](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/e6230e4d-1598-4c2f-899e-e6df783270b5)
+![Screenshot_8](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/06c861db-9dd6-4db8-9b4a-08f6afc25849)
+![Screenshot_9](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/f2ff1765-8e21-4943-afba-4c9713ce0f6a)
+![Screenshot_11](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/d9dff55e-8778-47ad-9f9b-c07f973f288f)
+![Screenshot_12](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/b8f7e57e-970f-444f-8732-4e9f1f852c3b)
+![Screenshot_13](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/f6f8659e-3829-46e5-8119-d6ca04161f04)
+![Screenshot_14](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/9e5a93ec-a3e3-44ed-b074-396193e9281b)
+![Screenshot_15](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/edc2ea04-c058-4728-a2ee-be432f461ba1)
+![Screenshot_16](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/f161f836-6a1a-4744-b2a3-301008edf5dd)
+![Screenshot_17](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/1829ee59-a357-42a8-97db-002aad4d8f6b)
+![Screenshot_18](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/38c520fd-ef86-4c22-afc6-e5705645ef67)
+![Screenshot_19](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/afd7e5a2-e152-4718-b521-b82195d384bb)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
