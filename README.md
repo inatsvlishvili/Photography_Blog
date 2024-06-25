@@ -6,6 +6,8 @@ All the necessary details can be managed from admin panel.
 
 See short video and pictures
 
+<iframe src="https://drive.google.com/file/d/1gvIHNpa94IhilsbEoM52I1SMSCpFkrkY/preview" width="640" height="480" allow="autoplay"></iframe>
+
 https://drive.google.com/file/d/1gvIHNpa94IhilsbEoM52I1SMSCpFkrkY/view?usp=sharing
 
 ![Screenshot_10](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/e776a0f3-8e91-4092-a3b1-a0ba8b702a0d)
