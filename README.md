@@ -5,18 +5,6 @@ It is possible to view the photos of photographers.
 All the necessary details can be managed from admin panel.
 
 See short video and pictures
-<!DOCTYPE html>
-<html>
-<body>
-  
-  <iframe src="url video in google drive/preview" ></iframe>
-  
-  <!--aloow full screen add tag -->
-  
-<iframe src="https://drive.google.com/file/d/1gvIHNpa94IhilsbEoM52I1SMSCpFkrkY/preview" width="640" height="480" allow="autoplay"></iframe>
-
-</body>
-</html>
 
 
 https://drive.google.com/file/d/1gvIHNpa94IhilsbEoM52I1SMSCpFkrkY/view?usp=sharing
