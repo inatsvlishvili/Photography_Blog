@@ -9,7 +9,9 @@ See short video and pictures
 https://drive.google.com/file/d/1gvIHNpa94IhilsbEoM52I1SMSCpFkrkY/view?usp=sharing
 
 ![Screenshot_10](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/e776a0f3-8e91-4092-a3b1-a0ba8b702a0d)
+
 ![Screenshot_1](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/b21b9b34-b195-4a6f-95c8-6800aa6648a2)
+
 ![Screenshot_2](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/e57912d0-b5cf-4404-b8e6-1b49e1b394ae)
 ![Screenshot_3](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/a5b5df95-92f7-4f59-98df-85b2e6defe8d)
 ![Screenshot_4](https://github.com/inatsvlishvili/Photography_Blog/assets/116165810/510decf3-a85b-438f-b21d-0367aa7e8235)
